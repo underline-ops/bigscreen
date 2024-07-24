@@ -619,5 +619,17 @@
     getRealData(parentInfo[0].code);
 
 
-    myChart.setOption(option);
+    //myChart.setOption(option);
 })();
+//检测前端是否能与后端通信
+document.addEventListener('DOMContentLoaded', function() {
+    // 模拟与后端的通信
+    fetch('http://localhost:3000/check').then(response => {
+        if (response.ok) {
+            // 通信成功，隐藏加载页面
+            document.getElementById('loader-wrapper').style.display = 'none';
+        }
+    }).catch(error => {
+        console.error('通信失败:', error);
+    });
+});

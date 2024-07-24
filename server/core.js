@@ -199,7 +199,10 @@ app.get('/column_data', (req, res) => {
     // 后期这里连接数据库获取实时数据，然后返回
     res.json(column_data);
 });
-
+//前后端通信校验
+app.get('/check', (req, res) => {
+    res.json('ok');
+});
 app.listen(port, () => {
     console.log(`core app listening at http://localhost:${port}`);
 });
