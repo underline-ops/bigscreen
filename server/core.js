@@ -203,6 +203,7 @@ app.get('/column_data', (req, res) => {
 app.get('/check', (req, res) => {
     res.json('ok');
 });
+
 app.listen(port, () => {
     console.log(`core app listening at http://localhost:${port}`);
 });

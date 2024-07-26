@@ -13,8 +13,8 @@
             .then(response => response.json())
             .then(data => {
                 return {
-                    xAxisData: data.xAxisData, // 后端返回的数据中有x轴的数据
-                    seriesData: data.seriesData // 后端返回的数据中有系列的数据
+                    xAxisData: data.xAxisData, // 后端返回x轴的数据
+                    seriesData: data.seriesData // 后端返回系列的数据
                 };
             })
             .catch(error => console.error('Error fetching data:', error));
@@ -62,6 +62,8 @@
 
     // 调用函数，设置图表数据
     setChartData();
+    // 设置定时器，每5秒刷新数据
+    setInterval(setChartData, 5000);
 })();
 
 
